@@ -3,6 +3,8 @@ import styles from './parent.module.css'
 import {X,O} from './util/main'
 
 export default function Parent() {
+  const X = 'X';
+ const O = 'O';
 const [square, setSquare] = useState(Array(9).fill(null));
 const [xIsNext, setXIsNext] = useState(true);
 const [scores, setScores] = useState({ X: 0, O: 0 });
