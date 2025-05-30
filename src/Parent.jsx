@@ -9,7 +9,7 @@ const [scores, setScores] = useState({ X: 0, O: 0 });
 
 
 // win state f
-const Winner = (squares) => {
+const getWinner = (squares) => {
     const lines = [
       [0, 1, 2], 
       [3, 4, 5], 
@@ -32,13 +32,13 @@ const Winner = (squares) => {
 
 
 const clickhandler =(index) =>{
-  if (square[index] || Winner(square))return
+  if (square[index] || getWinner(square))return
   const newSquare = [...square];
   newSquare[index] = xIsNext ? X: O;
   setSquare(newSquare);
   setXIsNext(!xIsNext);
 //update scores f
-  const winner = Winner(newSquare);
+  const winner = getWinner(newSquare);
     if (winner) {
       setScores((prevScores) => ({
         ...prevScores,
@@ -62,7 +62,7 @@ const nextGame = () => {
     setXIsNext(true);
   };
 
-const winner = Winner(square);
+const winner = getWinner(square);
   const status = winner ? `برنده: ${winner}` : `نوبت بازیکن: ${xIsNext ? X: O } `;
 
   return (
