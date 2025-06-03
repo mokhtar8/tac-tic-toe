@@ -8,7 +8,7 @@ const [xIsNext, setXIsNext] = useState(true);
 const [scores, setScores] = useState({ X: 0, O: 0 });
 
 
-// win state f
+// win state 
 const getWinner = (squares) => {
     const lines = [
       [0, 1, 2], 
